@@ -1,0 +1,26 @@
+# Development Dockerfile
+FROM node:18-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Install development tools
+RUN apk add --no-cache git
+
+# Copy package files
+COPY package*.json ./
+
+# Install all dependencies (including dev dependencies)
+RUN npm install
+
+# Copy application code
+COPY . .
+
+# Expose port
+EXPOSE 3000
+
+# Enable hot reloading for development
+VOLUME ["/app"]
+
+# Start with nodemon for development (hot reloading)
+CMD ["npx", "nodemon", "index.js"]

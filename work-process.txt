@@ -1,0 +1,4 @@
+1. app ---> Ready
+2. Dokerfile.dev ---> Ready and Tested..
+3. Dockerfile.prod ---> Ready and tested..
+4. 
