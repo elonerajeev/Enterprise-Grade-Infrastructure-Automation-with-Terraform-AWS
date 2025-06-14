@@ -1,0 +1,43 @@
+name: CI/CD - Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 📦 Step 1: Checkout repository code
+    - name: 📦 Checkout Repository Code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0  # optional: gets full history for better logs
+
+    # ⚙️ Step 2: Set up Docker Buildx
+    - name: ⚙️ Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    # 🔐 Step 3: Authenticate with DockerHub using GitHub Secrets
+    - name: 🔐 Log in to DockerHub (using secrets)
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    # 🏗️ Step 4: Build Docker Image from production Dockerfile
+    - name: 🏗️ Build Docker Image from app/Dockerfile.prod
+      run: |
+        echo "📢 Starting Docker build..."
+        docker build -t elonerajeev/infra-app:latest -f app/Dockerfile.prod ./app
+        echo "✅ Docker image built successfully."
+
+    # ☁️ Step 5: Push Docker image to DockerHub
+    - name: ☁️ Push Docker Image to DockerHub
+      run: |
+        echo "📢 Pushing Docker image to DockerHub..."
+        docker push elonerajeev/infra-app:latest
+        echo "✅ Docker image pushed to DockerHub successfully."
