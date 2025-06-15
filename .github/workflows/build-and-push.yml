@@ -1,11 +1,12 @@
-name: Build and Push Docker Image
+# .github/workflows/docker-build.yml
+name: Build and Push to Docker Hub
 
 on:
   push:
     branches: [main]
 
 jobs:
-  build:
+  build-and-push:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,7 +17,7 @@ jobs:
         run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
       - name: Build Docker Image
-        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/infra-app:latest .
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/infra-app:latest -f ./app/Dockerfile.prod ./app
 
       - name: Push Docker Image to Docker Hub
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/infra-app:latest
