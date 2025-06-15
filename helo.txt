@@ -1,0 +1,11 @@
+terraform/
+├── backends/               → Stores backend config (S3 + DynamoDB for state)
+├── environments/
+│   ├── dev/                → Dev environment (entry point for `terraform apply`)
+│   └── prod/               → Prod environment (for production infra)
+└── modules/                → Reusable modules
+    ├── alb/                → Load Balancer
+    ├── ec2/                → EC2 with Docker setup
+    ├── iam/                → IAM Roles, Policies
+    ├── s3/                 → S3 for state + app if needed
+    └── vpc/                → Custom VPC, subnets, etc.
