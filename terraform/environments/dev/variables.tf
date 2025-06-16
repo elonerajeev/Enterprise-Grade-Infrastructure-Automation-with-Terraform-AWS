@@ -13,3 +13,7 @@ variable "dockerhub_password" {
 variable "vpc_id" {
   type = string
 }
+
+variable "key_name" {
+  default = "infraAppKey1"
+}

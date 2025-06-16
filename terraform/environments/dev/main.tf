@@ -23,6 +23,7 @@ module "ec2" {
   vpc_id              = module.vpc.vpc_id             # ✅ required for SG
   dockerhub_username  = "elonerajeev"
   dockerhub_password  = var.dockerhub_password
+  key_name            = var.key_name
 }
 
 
