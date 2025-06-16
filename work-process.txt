@@ -2,5 +2,6 @@
 2. Dokerfile.dev ---> Ready and Tested..
 3. Dockerfile.prod ---> Ready and tested..
 4. Work On CICD Pipelines --> Done
-5. Iac Using Terraform ---> Working
-6.  
+5. Iac Using Terraform ---> Done
+6. Monitoring using cloudwatch ---> Done
+7. Monitoring using prometheus -- Working
