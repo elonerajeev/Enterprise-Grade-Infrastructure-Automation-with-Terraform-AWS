@@ -3,7 +3,8 @@
 <div align="center">
 
 ![Project Banner](https://img.shields.io/badge/DevOps-Enterprise%20Grade-blue?style=for-the-badge&logo=amazon-aws)
-![Build Status](https://img.shields.io/github/actions/workflow/status/elonerajeev/Enterprise-Grade-Infrastructure-Automation-with-Terraform-AWS/build-and-deploy.yml?style=for-the-badge&logo=github-actions)
+[![Build and Push to Docker Hub](https://github.com/elonerajeev/Enterprise-Grade-Infrastructure-Automation-with-Terraform-AWS/actions/workflows/build-and-push.yml/badge.svg)](https://github.com/elonerajeev/Enterprise-Grade-Infrastructure-Automation-with-Terraform-AWS/actions/workflows/build-and-push.yml)
+[![Deploy to EC2](https://github.com/elonerajeev/Enterprise-Grade-Infrastructure-Automation-with-Terraform-AWS/actions/workflows/deploy-to-ec2.yml/badge.svg)](https://github.com/elonerajeev/Enterprise-Grade-Infrastructure-Automation-with-Terraform-AWS/actions/workflows/deploy-to-ec2.yml)
 ![Terraform](https://img.shields.io/badge/IaC-Terraform-623CE4?style=for-the-badge&logo=terraform)
 ![AWS](https://img.shields.io/badge/Cloud-AWS-FF9900?style=for-the-badge&logo=amazon-aws)
 ![Docker](https://img.shields.io/badge/Container-Docker-2496ED?style=for-the-badge&logo=docker)
@@ -360,7 +361,7 @@ git push origin feature/your-feature-name
 
 <div align="center">
 
-<img src="https://avatars.githubusercontent.com/u/elonerajeev" width="100" height="100" style="border-radius: 50%;">
+<img src="https://rajeevxportfolio.netlify.app/images/pictures/profile-pic%20(1)%20(1).png" width="100" height="100" style="border-radius: 50%;">
 
 **Rajeev Kumar**  
 *AWS DevOps Engineer & Cloud Architect*
