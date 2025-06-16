@@ -1,6 +1,9 @@
 # .github/workflows/docker-build.yml
 name: Build and Push to Docker Hub
 
+permissions:
+  contents: read
+
 on:
   push:
     branches: [main]
