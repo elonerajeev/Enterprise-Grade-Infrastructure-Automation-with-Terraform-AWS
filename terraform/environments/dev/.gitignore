@@ -1,0 +1,13 @@
+# Ignore all Terraform variable and state files
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+*.tfvars.json
+*.auto.tfvars
+variables.tf
+
+# Explicit paths (optional but extra safe)
+terraform/environments/dev/variables.tf
+terraform/environments/prod/variables.tf
+terraform/**/*.auto.tfvars
